@@ -10,16 +10,16 @@ def login():
     session = requests.session()
     image_data = session.get(p_url).content
     dest_url = "D:\\"
-    print("±£´æÑéÖ¤Âëµ½DÅÌ")
+    print("ä¿å­˜éªŒè¯ç åˆ°Dç›˜")
     try:
         with open(dest_url + "captcha.jpg", "wb") as jpg:
             jpg.write(image_data)
     except IOError:
-        print("±£´æÑéÖ¤ÂëÊ§°Ü")
-    captcha = input("ÇëÊäÈëÑéÖ¤Âë")
+        print("ä¿å­˜éªŒè¯ç å¤±è´¥")
+    captcha = input("è¯·è¾“å…¥éªŒè¯ç ")
     param = {'type': 'sso',
-             'zjh': '',//ÕâÀïÌîÕËºÅ
-             'mm': '',//ÕâÀïÌîÃÜÂë
+             'zjh': '', # è¿™é‡Œå¡«è´¦å·
+             'mm': '', # è¿™é‡Œå¡«å¯†ç 
              'v_yzm': captcha
              }
     header = {
@@ -105,7 +105,7 @@ def evaluate():
         data['zgpj'] = ""
         response = session.post(target_url, data=data, headers=header)
         print(response.text)
-    print("ÆÀ¹À³É¹¦")
+    print("è¯„ä¼°æˆåŠŸ")
 
 
 def choose_class_page():
